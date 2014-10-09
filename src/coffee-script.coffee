@@ -126,7 +126,7 @@ exports.eval = (code, options = {}) ->
   return unless code = code.trim()
   Script = vm.Script
   if Script
-    if options.sandbox?
+    if options.sandbox? and options.sandbox != true 
       if options.sandbox instanceof Script.createContext().constructor
         sandbox = options.sandbox
       else
